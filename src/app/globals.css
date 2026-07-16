@@ -1,0 +1,105 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root{
+  --bg:#0B0E11;
+  --card:#11161D;
+  --border:#1F2630;
+  --text:#EAECEF;
+  --muted:#8A97A8;
+  --gold:#D9A441;
+  --gold-hi:#F5D07A;
+  --up:#0ECB81;
+  --down:#F6465D;
+  --warn:#F0B90B;
+}
+
+*{box-sizing:border-box}
+*::before,*::after{box-sizing:border-box}
+html,body{
+  margin:0;
+  padding:0;
+  background:var(--bg);
+  color:var(--text);
+  min-height:100%;
+  max-width:100%;
+  overflow-x:hidden;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size:14px;
+  line-height:1.45;
+  font-variant-numeric: tabular-nums;
+}
+body{
+  background-color:var(--bg);
+  background-image:
+    radial-gradient(circle at top left, rgba(217,164,65,.09), transparent 26%),
+    linear-gradient(90deg, rgba(217,164,65,.03) 1px, transparent 1px),
+    linear-gradient(rgba(217,164,65,.025) 1px, transparent 1px);
+  background-size:auto, 28px 28px, 28px 28px;
+}
+a{color:inherit;text-decoration:none}
+button,input,select{font:inherit}
+button,select,input{min-width:0}
+select{appearance:none;-webkit-appearance:none;-moz-appearance:none}
+svg{display:block}
+::-webkit-scrollbar{height:10px;width:10px}
+::-webkit-scrollbar-thumb{background:#283240;border-radius:9999px}
+::-webkit-scrollbar-track{background:#0f1319}
+
+.kx-card{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:16px;
+  min-width:0;
+  overflow:hidden;
+}
+.kx-card-gold{
+  border-color:rgba(217,164,65,.32);
+  box-shadow:0 0 0 1px rgba(217,164,65,.08) inset;
+}
+.kx-panel-title{
+  font-size:12px;
+  line-height:1.25;
+  letter-spacing:.1em;
+  color:var(--muted);
+  text-transform:uppercase;
+}
+.kx-meta{
+  font-size:12px;
+  line-height:1.35;
+  color:var(--muted);
+}
+.kx-pill{
+  border:1px solid rgba(217,164,65,.22);
+  background:rgba(217,164,65,.06);
+  color:var(--text);
+  border-radius:9999px;
+}
+.kx-icon-btn{
+  width:32px;
+  height:32px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:9999px;
+  border:1px solid var(--border);
+  background:var(--card);
+  color:var(--muted);
+  transition:all .18s ease;
+}
+.kx-icon-btn:hover{
+  border-color:rgba(217,164,65,.4);
+  color:var(--gold-hi);
+}
+.kx-skeleton{
+  position:relative;
+  overflow:hidden;
+  background:linear-gradient(90deg, rgba(255,255,255,.02), rgba(255,255,255,.06), rgba(255,255,255,.02));
+  background-size:200% 100%;
+  animation:kx-shimmer 1.4s linear infinite;
+}
+@keyframes kx-shimmer{
+  0%{background-position:200% 0}
+  100%{background-position:-200% 0}
+}
